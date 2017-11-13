@@ -2,6 +2,10 @@
 export default class TalkService {
 
     findAllSpeakers() {
-        return [{id: 'sp1', fullname:'hello'}];
+        return $.get('http://localhost:3000/speakers')
+    }
+
+    findSpeakerById(id) {
+        return $.get(`http://localhost:3000/speakers/${id}`)
     }
 }

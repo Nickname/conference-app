@@ -8,7 +8,19 @@ export default class SpeekerListView {
 
     render() {
         this.talkService.findAllSpeakers()
-            .then((data) => $('#main-view').html(data))
+            .then((data) => {
+                let tabCards = []
+
+                data.forEach(s => {
+                    let cardSpeaker = card
+                    //cardSpeaker = cardSpeaker.replace('{{image}}', s.image)
+                    cardSpeaker = cardSpeaker.replace('{{name}}', `${s.firstname} ${s.lastname}`)
+
+                    tabCards.push(cardSpeaker)
+                })
+                $('#main-view').html(tabCards.join())
+            })
+
     }
 
 }

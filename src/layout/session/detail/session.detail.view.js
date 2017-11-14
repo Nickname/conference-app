@@ -10,24 +10,28 @@ export default class SessionDetailView {
         {
             var path = location.hash.split("/")
             let id = path[path.length - 1]
-    
-            this.talkService.findSessionById(id)
-                .then(s => {
-                    let tabSessionDetail = []
 
-                  
-                       let sessionDetail = session_detail.replace('{{title}}', s.title)
-                        sessionDetail = sessionDetail.replace('{{desc}}', s.desc)
+            const req1 = this.talkService.findSessionById(id)
+           
+            req1.then(s => {
+                    let sessionDetail = session_detail
+                    sessionDetail = sessionDetail.replace('{{title}}', s.title)
+                    sessionDetail = sessionDetail.replace('{{desc}}', s.desc)
 
-                        let tabPresentateur = []
-                        s.speakers.forEach(sp => {
-                            tabPresentateur.push(`<a href="#speakers-list">${sp}</a>`)
+                    let tabPresentateur = []
+
+                    Promise.all(s.speakers.map(sp => this.talkService.findSpeakerById(sp)))
+                        .then((result) => {
+                            result.forEach(sp => {
+                                var speaker_name = `${sp.firstname} ${sp.lastname}`
+                                tabPresentateur.push(`<a href="#speakers-list">${speaker_name}</a><br>`)
+                            })
+
+                            sessionDetail = sessionDetail.replace('{{presentateurs}}', tabPresentateur.join(''))
+                            $('#main-view').html(sessionDetail)
                         })
-                        session_detail.replace('{{firstname}}', s.firstname, tabPresentateur.join(''))
-                        session_detail.replace('{{lastname}}', s.lastname, tabPresentateur.join(''))
-
-                        tabPresentateur.push(sessionDetail)
-                        $('#main-view').html(tabPresentateur.join(""))
+                    
+                   
                 })
         }
     }

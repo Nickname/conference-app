@@ -1,4 +1,5 @@
 import card from './speaker-card.html'
+import css from './style.css'
 
 export default class SpeekerListView {
 

@@ -2,14 +2,14 @@
     <div class="card-block">
         <h4 class="card-title text-center">{{name}}</h4>
     </div>
-    <img class="card-img-bottom" src="/images/speakers/{{image}}" alt="photo speaker" style="max-height:250px; max-width:250px; margin-left:20%">
+    <img id="img-speaker" class="card-img-bottom" src="/images/speakers/{{image}}" alt="photo speaker" style="">
     <div class="card-block">
-        <div class="row social">
+        <div class="row col-12" id="social-list">
             {{social}}
         </div>
         <div class="row">
-            <p class="col-12">Ses présentations</p>
-            <div class="row">
+            <h6 class="col-12">Ses présentations</h6>
+            <div class="col-12">
                 {{presentations}}
             </div>
         </div>

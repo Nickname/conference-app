@@ -1,0 +1,16 @@
+.row {
+    margin-top: 15px;
+}
+
+#list-btn {
+    max-width: 250px;
+    display: block;
+    margin: 0 auto
+}
+
+#image-conf {
+    max-width: 250px;
+    max-height: 250px;
+    display: block;
+    margin: 0 auto;
+}

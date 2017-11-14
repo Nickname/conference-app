@@ -1,5 +1,7 @@
 import speaker_detail from './speaker-detail.html'
 
+import css from './style.css'
+
 export default class SpeakerDetailView {
     constructor(talkService) {
         this.talkService = talkService
@@ -18,7 +20,9 @@ export default class SpeakerDetailView {
 
                 let tabSocial = []
                 s.socials.forEach(social => {
-                    tabSocial.push(`<a class="btn btn-primary" style="margin-left:10px" href="${social.link}">${social.class}</a>`)
+                    var social_network = social.class.charAt(0).toUpperCase() + social.class.slice(1)
+
+                    tabSocial.push(`<a id="btn-social" class="btn btn-primary" href="${social.link}">${social_network}</a>`)
                 })
                 detail = detail.replace('{{social}}', tabSocial.join(''))
 
@@ -27,7 +31,7 @@ export default class SpeakerDetailView {
             .then(s => {
                 let tabPresentation = []
                 s.forEach(session => {
-                    tabPresentation.push(`<a class="col-12" style="margin-left:30px" href="/#session-detail/${session.id}">${session.title}</a>`)
+                    tabPresentation.push(`<a class="row col-11" href="/#session-detail/${session.id}">${session.title}</a>`)
                 })
                 detail = detail.replace('{{presentations}}', tabPresentation.join(''))
 

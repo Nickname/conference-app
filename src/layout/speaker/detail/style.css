@@ -1,0 +1,16 @@
+#btn-social {
+    margin-top: 5px;
+    margin-left: 5px
+}
+
+#social-list {
+    display: block;
+    margin: 0 auto
+}
+
+#img-speaker {
+    max-height:250px;
+    max-width:250px;
+    display: block;
+    margin: 0 auto
+}

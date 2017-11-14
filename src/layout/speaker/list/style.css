@@ -1,0 +1,23 @@
+#speaker-card {
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px
+}
+
+h4 {
+    text-align: center
+}
+
+#speaker-img {
+    max-width: 200px;
+    max-height: 200px;
+    display: block;
+    margin: 0 auto
+}
+
+#speaker-detail {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 40%
+}

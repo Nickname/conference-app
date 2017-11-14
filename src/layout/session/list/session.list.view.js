@@ -13,8 +13,14 @@ export default class SessionListView {
 
                 data.forEach(s => {
                     let session = session_list
-                    session.replace()
+                    session = session.replace('{{title}}', s.title)
+                    session = session.replace('{{id}}', s.id)
+
+                tabSessions.push(session)
+
             })
+
+            $('#main-view').html(tabSessions.join(""))
         })
     }
 }

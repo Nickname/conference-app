@@ -1,4 +1,4 @@
-import session-detail from "./session-detail.html"
+import session_detail from "./session-detail.html"
 
 export default class SessionDetailView {
 

@@ -1,4 +1,4 @@
-import session-list from "./session-list.html"
+import session_list from "./session-list.html"
 
 export default class SessionListView {
 
@@ -7,6 +7,6 @@ export default class SessionListView {
     }
 
     render() {
-        $('#main-view').html(session-list)
+        $('#main-view').html(session_list)
     }
 }

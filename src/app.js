@@ -23,9 +23,9 @@ class App {
 
     var router = () => {
         if (location.hash == '#speakers-list') {
-            layoutSpeakerList.render()
+            this.layoutSpeakerList.render()
         } else if (location.hash == '#sessions-list') {
-            layoutSessionList.render()
+            this.layoutSessionList.render()
         } else {
             // 404 ?
         }

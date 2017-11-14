@@ -9,3 +9,4 @@ export default class TalkService {
         return $.get(`http://localhost:3000/speakers/${id}`)
     }
 }
+

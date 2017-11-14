@@ -13,12 +13,12 @@ export default class SpeekerListView {
 
                 data.forEach(s => {
                     let cardSpeaker = card
-                    //cardSpeaker = cardSpeaker.replace('{{image}}', s.image)
+                    cardSpeaker = cardSpeaker.replace('{{image}}', `./img/speakers/${s.image}`)
                     cardSpeaker = cardSpeaker.replace('{{name}}', `${s.firstname} ${s.lastname}`)
 
                     tabCards.push(cardSpeaker)
                 })
-                $('#main-view').html(tabCards.join())
+                $('#main-view').html(tabCards.join(""))
             })
 
     }

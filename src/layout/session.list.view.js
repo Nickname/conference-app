@@ -7,6 +7,15 @@ export default class SessionListView {
     }
 
     render() {
-        $('#main-view').html(session_list)
+        this.talkService.findAllSessions()
+
+            .then((data) => {
+                let tabSessions = []
+
+                data.forEach(s => {
+                    let session = session_list
+                    session.replace()
+            })
+        })
     }
 }

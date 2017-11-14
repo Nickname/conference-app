@@ -8,7 +8,6 @@ export default class SessionListView {
 
     render() {
         this.talkService.findAllSessions()
-
             .then((data) => {
                 let tabSessions = []
 

@@ -16,6 +16,3 @@ window.addEventListener('load', () => {
     };
     app.router();
 });
-/*
-talkService.findAllSpeakers()
-    .then((speakers) => console.log(speakers))*/

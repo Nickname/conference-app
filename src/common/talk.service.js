@@ -28,4 +28,8 @@ export default class TalkService {
     findCategorieById(id) {
         return $.get(`http://localhost:3000/categories/${id}`)
     }
+
+    findSessionByThing(thing) {
+        return $.get(`http://localhost:3000/sessions?q=${thing}`)
+    }
 }

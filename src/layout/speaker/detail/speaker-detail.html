@@ -1,8 +1,17 @@
-<div class="container">
-    <div class="row">
-        <h4>{{name}}</h4>
+<div class="card col-12" style="margin-top: 10px; margin-bottom: 20px; padding: 10px 10px 10px 10px">
+    <div class="card-block">
+        <h4 class="card-title text-center">{{name}}</h4>
     </div>
-    <div class="row img-speaker">
-        <img class="img img-responsive" src="" alt="">
+    <img class="card-img-bottom" src="/images/speakers/{{image}}" alt="photo speaker" style="max-height:250px; max-width:250px; margin-left:20%">
+    <div class="card-block">
+        <div class="row social">
+            {{social}}
+        </div>
+        <div class="row">
+            <p class="col-12">Ses présentations</p>
+            <div class="row">
+                {{presentations}}
+            </div>
+        </div>
     </div>
 </div>

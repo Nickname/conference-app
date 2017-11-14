@@ -28,9 +28,9 @@ export default class App {
             this.layoutSpeakerList.render()
         } else if (location.hash == '#sessions-list') {
             this.layoutSessionList.render()
-        } else if (location.hash.startsWith('#speakers-detail')) {
+        } else if (location.hash.startsWith('#speaker-detail')) {
             this.layoutSpeakerDetail.render()
-        } else if (location.hash.startsWith('#sessions-detail')) {
+        } else if (location.hash.startsWith('#session-detail')) {
             this.layoutSessionDetail.render()
         } else {
             this.layout.render()
